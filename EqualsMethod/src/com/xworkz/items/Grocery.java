@@ -1,0 +1,61 @@
+package com.xworkz.items;
+
+public class Grocery {
+
+	private String name;
+	private double price;
+
+	public Grocery(String name, double price) {
+		super();
+		this.name = name;
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "GroceryName=" + name + "\n" + "price=" + price;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj != null) {
+			System.out.println("checking object -not null");
+
+			if (obj instanceof Grocery) {
+				System.out.println("matched ");
+
+				Grocery casted = (Grocery) obj;
+				if (this.name == casted.name && this.price == casted.price) {
+					System.out.println("Both objects are matched");
+					return true;
+				} else {
+					System.err.println("Both objects are not same");
+				}
+			} else {
+
+				System.err.println(" mis-matched");
+			}
+		} else {
+
+			System.err.println("Object is null ");
+		}
+		return false;
+	}
+
+}
